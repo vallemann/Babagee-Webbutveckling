@@ -10,6 +10,8 @@
 /* Scroll-snapping för html dokument med denna klass */
 .html-scroll-snap {
     scroll-snap-type: y mandatory;
+    
+    /* Nedan är för äldre webbläsare, stöds inte längre */
     scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(100vh);
 }
