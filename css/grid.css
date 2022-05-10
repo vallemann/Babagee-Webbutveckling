@@ -11,6 +11,6 @@ nav {
     grid-area: nav;
 }
 
-.content {
+main {
     grid-column: 1/-1;
 }

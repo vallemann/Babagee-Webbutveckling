@@ -1,3 +1,4 @@
+//Visa skroll knappen när man börjar skrolla på sidan
 document.addEventListener("scroll", (e) => {
     let scroll = window.scrollY;
     let btn = document.getElementsByClassName("go-top")[0];
@@ -8,12 +9,14 @@ document.addEventListener("scroll", (e) => {
     }
 });
 
+//Funktion för att smooth skrolla till toppen
 function scrollToTop() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 let menuOpen = false;
 
+//Öppna och stänga meny för mobila enheter
 function mobileToggleMenu() {
     menuOpen = !menuOpen;
     if (menuOpen) {

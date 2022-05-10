@@ -6,6 +6,8 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+
+/* Scroll-snapping för html dokument med denna klass */
 .html-scroll-snap {
     scroll-snap-type: y mandatory;
     scroll-snap-type: mandatory;
@@ -17,6 +19,8 @@ body {
     overflow-x: hidden;
 }
 
+
+/* Font size för alla text-containers */
 h1, h2, p, a {
     color: white;
     font-size: 1.2rem;
@@ -51,10 +55,11 @@ nav li:hover {
     transition: 200ms;
 }
 
-.content {
+main {
     text-align: center;
 }
 
+/* Sektion med scroll snap i mitten */
 .scroll-section {
     display: flex;
     align-items: center;
@@ -78,6 +83,8 @@ nav li:hover {
     align-items: center;
 
     text-align: left;
+
+    /* Första sektionen tillsammans med navbar ska vara 100vh */
     height: calc(100vh - 58px) !important;
 }
 
@@ -89,6 +96,8 @@ nav li:hover {
     width: 50%;
 }
 
+/* Knapp för att skrolla till toppen, visas ej från början */
+
 .go-top {
     position: fixed;
     bottom: 1rem;
@@ -97,10 +106,13 @@ nav li:hover {
     font-size: 40px !important;
     background-color: white;
     border: 1px white solid;
+
+    /* Radie 100% för att bli cirkel */
     border-radius: 100%;
 
     color: #191919;
 
+    /* Opacity transition som körs när min script ändrar opacity */
     transition: opacity 150ms linear;
 }
 
@@ -119,6 +131,8 @@ nav li:hover {
 .smaller-text {
     font-size: 1rem;
 }
+
+/* Sektion för text och bild */
 
 .testimonials-section {
     display: flex;
@@ -141,13 +155,15 @@ nav li:hover {
     /*margin-right: 7rem;*/
 }
 
+/* Mindre text på enheter med lite smalare skärm */
 @media screen and (max-width: 1100px) {
     h1, h2, p, a {
         color: white;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
+/* Mobila enheter */
 @media screen and (max-width: 850px) {
     body {
         overflow-x: hidden;
@@ -168,16 +184,21 @@ nav li:hover {
         display: none;
     }
 
+
+    /* Height auto för att bilder inte ska täcka 100vh */
     .scroll-section {
         height: auto;
     }
 
+
+    /* Ingen scroll snapping på mindre enheter, ingen bra användarupplevelse */
     .html-scroll-snap {
         scroll-snap-type: none;
         scroll-snap-type: none;
         scroll-snap-points-y: none;
     }
 
+    /* Visa mobil meny som annars är dold */
     .mobile-menu {
         display: inline-block !important;
         margin-right: 1rem;
@@ -189,6 +210,7 @@ nav li:hover {
         justify-content: flex-end;
     }
     
+    /* Ändra list-element i navbar vid mindre enheter, flex-direction via kolumner istället för rader */
     nav ul {
         display: none;
         position: absolute;
@@ -210,11 +232,12 @@ nav li:hover {
         width: 50%;
     }
 
+    /* Ändra flex direction på mindre enheter för att placera texten under bild istället för bredvid */
     .testimonials-section {
         flex-direction: column-reverse;
     }
 
     .testimonials-section > img {
-        padding-bottom: 2rem;
+        margin-bottom: 2rem;
     }
 }
